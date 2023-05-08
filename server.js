@@ -31,7 +31,15 @@ app.get('/app/rpsls/', (req, res) => {
 })
 
 // POST multi-player methods
+app.post('/app/rps/', (req, res) => {
+  res.set('Content-Type', 'application/json')
+  res.status(200).send(rps(req.body.shot))
+})
 
+app.post('/app/rpsls/', (req, res) => {
+  res.set('Content-Type', 'application/json')
+  res.status(200).send(rpsls(req.body.shot))
+})
 
 // handle requests not matching any route
 
