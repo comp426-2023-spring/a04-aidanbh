@@ -41,6 +41,18 @@ app.post('/app/rpsls/play/', (req, res) => {
   res.status(200).send(rpsls(req.body.shot))
 })
 
+// URL param multi-player methods
+
+app.get('/app/rps/play/:shot', (req, res) => {
+  res.set('Content-Type', 'application/json')
+  res.status(200).send(rps(req.params.shot))
+})
+
+app.get('/app/rpsls/play/:shot', (req, res) => {
+  res.set('Content-Type', 'application/json')
+  res.status(200).send(rpsls(req.params.shot))
+})
+
 // handle requests not matching any route
 
 app.use((req, res, next) => 
