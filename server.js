@@ -6,6 +6,11 @@ import express from 'express'
 const app = express()
 
 
+app.get('/app/', (req, res) => {
+  res.set('Content-Type', 'text/plain')
+  res.status(200).send("200 OK")
+})
+
 
 // handle requests not matching any route
 app.use((req, res, next) => 
