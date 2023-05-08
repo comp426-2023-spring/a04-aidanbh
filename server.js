@@ -31,6 +31,7 @@ app.get('/app/rpsls/', (req, res) => {
 })
 
 // POST multi-player methods
+
 app.post('/app/rps/play/', (req, res) => {
   res.set('Content-Type', 'application/json')
   res.status(200).send(rps(req.body.shot))
@@ -39,6 +40,18 @@ app.post('/app/rps/play/', (req, res) => {
 app.post('/app/rpsls/play/', (req, res) => {
   res.set('Content-Type', 'application/json')
   res.status(200).send(rpsls(req.body.shot))
+})
+
+// GET urlencoded multi-player methods
+
+app.get('/app/rps/play/', (req, res) => {
+  res.set('Content-Type', 'application/json')
+  res.status(200).send(rps(req.query.shot))
+})
+  
+app.get('/app/rpsls/play/', (req, res) => {
+  res.set('Content-Type', 'application/json')
+  res.status(200).send(rpsls(req.query.shot))
 })
 
 // URL param multi-player methods
