@@ -1,0 +1,19 @@
+{
+  "name": "rpsls-api",
+  "version": "1.0.0",
+  "description": "Play RPS(LS) over the network.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js --port=2112"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2023-spring/a04-aidanbh.git"
+  },
+  "author": "@aidanbh",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2023-spring/a04-aidanbh/issues"
+  },
+  "homepage": "https://github.com/comp426-2023-spring/a04-aidanbh#readme"
+}
