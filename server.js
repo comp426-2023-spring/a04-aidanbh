@@ -7,7 +7,7 @@ const app = express()
 
 // parse URLEncoded and JSON req body
 app.use(express.json())
-app.use(express.urlencoded())
+app.use(express.urlencoded({extended: true}))
 
 import { rps, rpsls } from './lib/rpsls.js'
 
