@@ -5,6 +5,10 @@ const port = (args.port || process.env.PORT || 3000)
 import express from 'express'
 const app = express()
 
+// parse URLEncoded and JSON req body
+app.use(express.json())
+app.use(express.urlencoded())
+
 import { rps, rpsls } from './lib/rpsls.js'
 
 // main endpoint
@@ -17,15 +21,16 @@ app.get('/app/', (req, res) => {
 // single player functions
 
 app.get('/app/rps/', (req, res) => {
- res.set('Content-Type', 'text/json')
+ res.set('Content-Type', 'application/json')
  res.status(200).send(rps())
 })
 
 app.get('/app/rpsls/', (req, res) => {
- res.set('Content-Type', 'text/json')
+ res.set('Content-Type', 'application/json')
  res.status(200).send(rpsls())
 })
 
+// POST multi-player methods
 
 
 // handle requests not matching any route
