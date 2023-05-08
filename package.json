@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/comp426-2023-spring/a04-aidanbh#readme",
   "dependencies": {
-    "minimist": "^1.2.8"
+    "minimist": "^1.2.8",
+    "rps": "^1.0.0",
+    "rpsls": "^0.9.0"
   }
 }
