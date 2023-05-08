@@ -5,14 +5,31 @@ const port = (args.port || process.env.PORT || 3000)
 import express from 'express'
 const app = express()
 
+import { rps, rpsls } from './lib/rpsls.js'
+
+// main endpoint
 
 app.get('/app/', (req, res) => {
   res.set('Content-Type', 'text/plain')
   res.status(200).send("200 OK")
 })
 
+// single player functions
+
+app.get('/app/rps/', (req, res) => {
+ res.set('Content-Type', 'text/json')
+ res.status(200).send(rps())
+})
+
+app.get('/app/rpsls/', (req, res) => {
+ res.set('Content-Type', 'text/json')
+ res.status(200).send(rpsls())
+})
+
+
 
 // handle requests not matching any route
+
 app.use((req, res, next) => 
 {
   res.set('Content-Type', 'text/plain')
